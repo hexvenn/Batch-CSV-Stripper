@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             this.dataGridView = new System.Windows.Forms.DataGridView();
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.textBoxInputDirectory = new System.Windows.Forms.TextBox();
             this.textBoxOutputDirectory = new System.Windows.Forms.TextBox();
             this.listBoxLog = new System.Windows.Forms.ListBox();
@@ -50,10 +48,6 @@
             this.dataGridView.RowHeadersVisible = false;
             this.dataGridView.Size = new System.Drawing.Size(604, 71);
             this.dataGridView.TabIndex = 0;
-            // 
-            // openFileDialog1
-            // 
-            this.openFileDialog1.FileName = "openFileDialog1";
             // 
             // textBoxInputDirectory
             // 
@@ -79,21 +73,23 @@
             // 
             // buttonInputDirectory
             // 
-            this.buttonInputDirectory.Location = new System.Drawing.Point(588, 10);
+            this.buttonInputDirectory.Location = new System.Drawing.Point(588, 12);
             this.buttonInputDirectory.Name = "buttonInputDirectory";
-            this.buttonInputDirectory.Size = new System.Drawing.Size(28, 23);
+            this.buttonInputDirectory.Size = new System.Drawing.Size(28, 20);
             this.buttonInputDirectory.TabIndex = 4;
             this.buttonInputDirectory.Text = "...";
             this.buttonInputDirectory.UseVisualStyleBackColor = true;
+            this.buttonInputDirectory.Click += new System.EventHandler(this.buttonInputDirectory_Click);
             // 
             // buttonOutputDirectory
             // 
-            this.buttonOutputDirectory.Location = new System.Drawing.Point(588, 40);
+            this.buttonOutputDirectory.Location = new System.Drawing.Point(588, 39);
             this.buttonOutputDirectory.Name = "buttonOutputDirectory";
             this.buttonOutputDirectory.Size = new System.Drawing.Size(28, 20);
             this.buttonOutputDirectory.TabIndex = 5;
             this.buttonOutputDirectory.Text = "...";
             this.buttonOutputDirectory.UseVisualStyleBackColor = true;
+            this.buttonOutputDirectory.Click += new System.EventHandler(this.buttonOutputDirectory_Click);
             // 
             // buttonStrip
             // 
@@ -103,6 +99,7 @@
             this.buttonStrip.TabIndex = 6;
             this.buttonStrip.Text = "Strip All";
             this.buttonStrip.UseVisualStyleBackColor = true;
+            this.buttonStrip.Click += new System.EventHandler(this.buttonStrip_Click);
             // 
             // MainForm
             // 
@@ -116,6 +113,7 @@
             this.Controls.Add(this.textBoxOutputDirectory);
             this.Controls.Add(this.textBoxInputDirectory);
             this.Controls.Add(this.dataGridView);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "MainForm";
             this.Text = "Batch CSV Stripper";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
@@ -127,8 +125,6 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridView;
-        private System.Windows.Forms.OpenFileDialog openFileDialog1;
-        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private System.Windows.Forms.TextBox textBoxInputDirectory;
         private System.Windows.Forms.TextBox textBoxOutputDirectory;
         private System.Windows.Forms.ListBox listBoxLog;
