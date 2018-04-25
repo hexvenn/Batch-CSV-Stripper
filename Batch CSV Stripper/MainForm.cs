@@ -120,11 +120,20 @@ namespace Batch_CSV_Stripper
                                         {
                                             if (fields[j] == "")
                                                 remove = true;
-                                            continue;
+                                            else
+                                            {
+                                                strippedLine.Add(EncaseIfComma(fields[j]));
+                                                continue;
+                                            }
+                                            
                                         }
 
                                         if (fields[j] != filters[j])
                                         {
+                                            if (n == 0)
+                                                continue;
+                                            
+
                                             remove = true;
                                         }
                                     }
